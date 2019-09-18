@@ -5,5 +5,5 @@
 ## Feel free to use the codes
 
 
-## owner's target is to build current mood songs. 
+## owner's of the App target is to build current mood songs. 
 
