@@ -15,7 +15,7 @@ class App extends Component {
    console.log('this.state', this.state);
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     const FETCH_URL = BASE_URL + 'q=' + this.state.query + '&offset=0&limit=20&type=artist&market=FI';
-    var accessToken = 'BQB_fWWkrZSowY9Nc85lNwO4sQpoBVQYfMutB3AqGK0HQO3cqNb6y7SKZFqDCoiq96Vi-2mYBqh8oDcjPDZs8sRGNip_lHIpUs4TMudSGUWUxXvnTyaBVoni9N45kUsFtFJCfvXWN3s1OuQZshdgyVvIO7FBRfvXDh-AtNRhkg&refresh_token=AQAAhw2S_iyX9BuLUJ-V6C7HvIBG819DDVNsge77NALtCT6n0Yi7LtjW3dVVBajMzQ4-As78BWeCgBKEoV-8vcgzF8mAjEHHp5aGXU4lQgmoRdYNolPWVHLm8XkS2ypbCjuLPQ'
+    var accessToken = 'BQBB68H-N2PJ0ThBlb2WRRxVfR_CObFx3dzbgSIngLfvgURanIR6ZUgJihWhsUCciJrHtchRqJGBdWJC9eMLO-LTXECDL_TUsRBX1MPJC4-ZEDDhXV4BrzffNU7Guwx2b3N8MFW4yrLDrWVSc0TPgNbgJTxpJgAtFYV7-1XGqQ&refresh_token=AQCcE9b2cP8b2lwOOtLDTMAXY16QHzUhk2g66-yYuFa2IBAHxOFC4_BLpQe_E8B7PWGAzOoMK8e0XPlN1ot4GLnjkao-U9D5cxcckSs2AstbMe87iB25DqGiXCxFKrAuc43oxw'
 
     var myOptions = {
       method: 'GET',
@@ -35,29 +35,7 @@ class App extends Component {
 
   }
 
-  getArtist(){
-    console.log('this.state', this.state);
-    const BASE_URL = 'https://api.spotify.com/v1/search?';
-    const FETCH_URL = BASE_URL + 'q=' + this.state.query + '&offset=0&limit=20&type=artist&market=FI';
-    var accessToken = 'BQB87pe1zPvADMwsZg2dylwj3cCQdQLyCVCMtUO4j7To3Qkyk3QO_torizrp8eV6qab_ZajkKm1Lhbk8nJZYefVSTKmrVTZs-IDQ6LgyRWq8M1yF0K9xgt-kHh_Q79oZ5Ult84arGK-QMrVQHGELdu_KQjB4EitKfFoZ88cQtQ&refresh_token=AQBYZWFLm3HLvrR-snSgL8HoTfWlMmMXHZSARBVsSpQ1CE04yOzwNIN1Eauo_9ar9oSdPVRuvBiXnMdEYjUp4dy_DRuVRXXkud2qdCHKYc_iVRY5mt8X8xRXhU71zG-ynWdOyg'
-
-    var myOptions = {
-      method: 'GET',
-      headers: {
-        'Authorization': 'Bearer ' + accessToken
-      },
-      mode: 'cors',
-      cache: 'default'
-    };
-
-    fetch(FETCH_URL, myOptions)
-      .then(response => response.json())
-      .then(json => {
-        const artist = json.artists.items[0];        
-        this.setState({ artist });
-      })
-
-  }
+  
 
   render() {
 
