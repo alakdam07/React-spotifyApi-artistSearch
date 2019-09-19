@@ -5,5 +5,4 @@
 ## Feel free to use the codes
 
 
-## owner's of the App target is to build current mood songs. 
 

@@ -1,0 +1,77 @@
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import { fadeInUp, fadeOutUp, pulse } from 'react-animations';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
+
+
+const fadeInUpAnimation = keyframes`${fadeInUp}`;
+const fadeOutUpAnimation = keyframes`${fadeOutUp}`;
+const pulseAnimation = keyframes`${pulse}`;
+
+const AnimateIn = styled.div`
+	animation: 1s ${fadeInUpAnimation};
+  font-size: 100px;
+  line-height: 100%;
+`;
+
+const Pulse = styled.div`
+	animation: 1s grow infinite;
+  width: 70%;
+  position: absolute;
+  border-radius: 100%;
+  padding-bottom: 70%;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: block;
+`;
+
+const AnimateOut = styled.div`
+	animation: 1s ${fadeOutUpAnimation};
+  font-size: 100px;
+  line-height: 100%;
+`;
+
+const Emoji = ({ emoji, index }) => {
+  return <div className={`emoji-item item-${index}`}> {emoji}  </div>
+}
+
+const Circles = ({ isPlaying }) => {
+	const stateClass = isPlaying ? '-show' : '';
+	return (
+		<div className={`circles-wrapper ${stateClass}`}>
+			<span className="circle c-100"> </span>
+			<span className="circle c-90"> </span>
+		</div>
+	)
+}
+
+const EmojiBox = (props) => {
+	console.log(props);
+  return (
+      <CSSTransitionGroup
+          className="emoji-box"
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          {props.hasEmoji ? props.emojis.map((item, key) => {
+            return <Emoji index={key} key={item.key} emoji={item.emoji} />
+          })
+					: <h2> Pick your emojis </h2>
+				}
+
+        </CSSTransitionGroup>
+  )
+}
+
+EmojiBox.defaultProps = {
+  emojis: ['1','3', '5'],
+}
+
+export default EmojiBox;
+
+// ./public/scripts/components/EmojiBox/index.jsx
+
+
+
+// WEBPACK FOOTER //
+// ./public/scripts/components/EmojiBox/index.jsx
+// ./public/scripts/components/EmojiBox/index.jsx
