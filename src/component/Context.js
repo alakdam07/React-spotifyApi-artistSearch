@@ -16,7 +16,7 @@ class Conext extends Component {
    console.log('this.state', this.state);
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     const FETCH_URL = BASE_URL + 'q=' + this.state.query + '&offset=0&limit=20&type=artist&market=FI';
-    var accessToken = 'BQBtFi-_R-aHWc-1jBBVRDJoZ8p24uzVcRR5h8Wq1tO1PbaBCNXLwb7KPcNzKwJixKxjHcOAYugPQ4iH01GiRHze_7QELblo8kE7nQx85jXtjxOLTuT9RiBa0mP1V-QaTs4ovDWuQ3cBMEw6b-8Gtv-zSrFgWZLx6gGfZph8kg&refresh_token=AQAZEpiF5olwWGvLsYTj84SYu935aZrq1gjpKF8SPMaE7LK2JX5-xdAr3pePq2NGnrUhO4AcFDqsVSjeL0gNAAtRh7ATX45iAPYew5PLBkD-Qt4lYpe-Zd8KbG5CD4iqk-6I4w'
+    var accessToken = 'BQAfUwE7_DwcQKMKWLhopGimbHExfMUpkv8ElW0dy1Tt6voMabj0OiCbGYS7kLAXh5F830XZxsZOvXZz8-KS5FMSt6eSFgYervY9S8rDZA7Ok1wEsLRVXMKWq-qyIH4zqo_yBp83almZ6sVVwyZgvJB1uYwrXpWbcUp8KkjDfQ&refresh_token=AQAJlFn__LOYIAEVckospmd4_bZghdq1c7Kbiaexn9GgQQldKyQbuQcu3_uCenOXgNvETubCqC4GCXzR9HvNXNTR7ueumWjdXISkTPnbx4cHxVE-cEPWHZ_t3nsSVDhS8GbYnw'
 
     var myOptions = {
       method: 'GET',
@@ -39,16 +39,12 @@ class Conext extends Component {
   render() {
 
     let artist = {
-      name: '',
+      
       followers: {
         total: ''
       },
       
-     uri:'',
-
-     images:[0],
-     
-     
+    images:[0].url
       
     };
 
@@ -81,7 +77,7 @@ class Conext extends Component {
         <div className="card card-body mb-3">
         <div className="row">
         <div className="col-md-3">
-        <div className="img-fluid mb-2" src={artist.images} style={{width:'100px',height: '140px'}}></div>
+        <div className="img-fluid mb-2" src={artist.images} style={{width:'160px',height: '160px'}}></div>
         <a href={artist.uri} target= "blank" className="btn btn-primary btn-block mb-4">View Profile</a>
         </div>
         <div className="col-md-9">
