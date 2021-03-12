@@ -44,7 +44,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
-    "react-dev-utils": "^9.0.3"
+    "react-dev-utils": "^11.0.4"
   },
   "author": "alak",
   "license": "ISC"
